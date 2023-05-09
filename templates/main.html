@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Graph Prophet</title>
+	<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+<body>
+	<div class="header">
+        <div class="title">
+         <a href="/"><h1>Graph Prophet</h1></a>
+        </div>
+        <div class="user">
+			<a style = 'margin-left: auto;'><b>{{username}}</b></a>
+			<a style = 'margin-left: 15px; margin-right: 7px;' href="{{ url_for('logout') }}"><b>Log Out</b></a>
+        </div>
+      </div>    
+	<main>
+		<section>
+			<h2>Upload CSV File(Please ensure closing prices are labelled Close)</h2>
+			<form type = 'file' method="post" enctype="multipart/form-data">
+				<label for="file">Choose a CSV file:</label>
+				<input type="file" id="file" name="file" accept=".csv">
+				<input id = 'stocks' type="submit" value="Upload">
+			</form>
+		</section>
+		<section>
+			<h2>Predicted Stock Prices</h2>
+			<div class= 'chart'>
+                {% if plot_filename %}
+                <img style = 'text-align: center;' src="{{ url_for('static', filename='images/' + plot_filename) }}" alt="Plot">
+                {% endif %}
+            </div>
+			<div class = 'stock_form'>
+				<form method ="post">
+					<label for = 'stock_name'>Enter Stocks you would like to keep track of:</label>
+					<input id = 'textbox' type = 'text'>
+					
+					<input name = 'stocks' id = 'stocks' type = 'submit' value="Track">
+				</form>
+				<br>
+				{% if stocks %}
+				<h3>Stocks you are tracking</h3>
+				<li>{{stocks}}</li>
+				{% endif %}
+			</div>
+		</section>
+	</main>
+</body>
+</html>

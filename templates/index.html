@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <title>Main Page</title>
+</head>
+<body>
+    <div class = 'logo-header' style="display: flex; align-items: center;">
+        <a style = 'margin-left: 7px;'href = '/'><b style="margin-right: 7px;">The Graph Prophet</b></a>
+       <!-- <img src="../images/grapharrow.png" width="25" height="25"> -->
+    {% if username %}
+    <a style = 'margin-left: auto;'><b>{{username}}</b></a>
+    <a style = 'margin-left: 15px; margin-right: 7px;' href="{{ url_for('logout') }}"><b>Log Out</b></a>
+    {% else %}
+        <a style = 'margin-left: auto;' href="/login"><b>Log In</b></a>
+        <a style = 'margin-left: 15px; margin-right: 7px;' href="/sign_up"><b>Sign Up</b></a>
+    {% endif %}
+    </div>
+    {% if username %}
+    <div class="center">
+        <h1>The Graph Prophet</h1>
+        <h3>Predicting the future, one graph at a time</h3>
+        <a href = '/main_page'><input type="submit" value="Get Started"></a>
+    </div>
+    {% else %}
+    <div class="center">
+        <h1>The Graph Prophet</h1>
+        <h3>Predicting the future, one graph at a time</h3>
+        <a href = '/main_page'><input type="submit" value="Get Started"></a>
+    {% endif %}
+</body>
+
+</html>

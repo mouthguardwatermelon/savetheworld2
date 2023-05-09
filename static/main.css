@@ -1,0 +1,95 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+.title {
+    text-align: center;
+    flex-grow: 1;
+  }
+  
+.user {
+    text-align: right;
+    flex-basis: auto;
+  }
+  
+
+body {
+    background-color: #111827;
+    color: white;
+    font-family: sans-serif;
+}
+
+h1 {
+	margin: 0;
+}
+
+main {
+	margin: 2rem;
+}
+
+section {
+	margin-bottom: 2rem;
+}
+
+h2 {
+	margin-top: 0;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+label {
+	margin-bottom: 0.5rem;
+}
+
+
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: gray;
+}
+
+.chart {
+  text-align: left;
+}
+
+.stock_form {
+  float: right;
+}
+
+#textbox {
+  border-radius: 10px;
+  width: 400px;
+  height: 30px;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+#stocks { 
+  width:70px;
+  height:30px;
+  background-color: #2691d9;
+  border:1px solid;
+  border-radius:10px;
+  font-size:13px;
+  color: white;
+  border-color: #111827;
+  font-weight:bold;
+  cursor:pointer;
+  outline:none;
+  margin-left: 170px;
+}
+
+#textboxbutton:hover {
+  border-color: #111827;
+}

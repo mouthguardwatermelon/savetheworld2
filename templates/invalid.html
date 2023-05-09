@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='invalid.css') }}">
+  <title>Log In </title>
+</head>
+<body>
+  <div class = 'center'>
+    <h1>Welcome Back</h1>
+    <form method = 'POST'>
+      <div class = 'txt_field'>
+        <input type = 'text' name = 'username' required>
+        <span></span>
+        <label>Username</label> 
+      </div>
+      <div class = 'txt_field'>
+        <input type = 'password' name = 'password' required>
+        <span></span>
+        <label>Password</label>
+      </div>
+      <input type = 'submit' value = 'Log In'>
+      <div class = 'signup_link'>
+        <a href="/sign_up">Not a member?</a>
+          
+      </div>
+    </form>
+    <div class="alert alert-danger" role="alert">
+        The username or password you entered is incorrect. Please try again.
+      </div>
+      
+  </div>
+</body>
+</html>
